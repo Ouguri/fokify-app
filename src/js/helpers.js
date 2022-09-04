@@ -14,7 +14,7 @@ export const AJAX = async function(url, uploadData = undefined) {
   const fetchPro = uploadData ? fetch(url, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json' // 告诉api用json格式发送数据
+        'Content-Type': 'application/json', // 告诉api用json格式发送数据
       },
       body: JSON.stringify(uploadData)
     }) : fetch(url);
