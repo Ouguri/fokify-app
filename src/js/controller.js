@@ -11,12 +11,6 @@ import 'core-js/stable'; // 补充其他给 es5
 import 'regenerator-runtime/runtime' // 补充async / await 给 es5
 import { async } from 'regenerator-runtime';
 
-// if(module.hot) {
-//   module.hot.accept()
-// }
-
-// https://forkify-api.herokuapp.com/v2
-
 ///////////////////////////////////////
 
 const controlRecipes = async function() {
@@ -135,10 +129,6 @@ const controlAddRecipe = async function(newRecipe) {
   }
 }
 
-const newFeature = function() {
-  console.log('Welcome to the application');
-}
-
 // 发布者-订阅者功能，在此调用 controlRecipes 作为 addHandlerRender 参数，并在视图区调用该函数(controlRecipes)作为回调函数
 const init = function() {
   bookmarksView.addHandlerRender(controlBookmarks); // 当页面重载触发渲染书签历史的列表内容
@@ -148,7 +138,6 @@ const init = function() {
   searchView.addHandlerSearch(controlSearchResults); // 当搜索结果提交时触发
   paginationView.addHandlerClick(controlPagination); // 当翻页按钮被点击时触发
   addRecipeView.addHandlerUpload(controlAddRecipe);
-  newFeature()
 }
 init();
 
